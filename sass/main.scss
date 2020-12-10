@@ -1,7 +1,6 @@
 @use 'modules/variable' as var;
 @use 'modules/mixins' as mix;
 
-
 body {
     background-color: var.$dark;
     max-width: 1440px;
