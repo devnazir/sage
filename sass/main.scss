@@ -1,0 +1,160 @@
+@use 'modules/variable' as var;
+@use 'modules/mixins' as mix;
+
+@font-face {
+    font-family: "Poppins";
+    src: url(../../fonts/Poppins-Regular.ttf);
+}
+
+body {
+    background-color: var.$dark;
+    max-width: 1440px;
+    margin: auto;
+    overflow-x: hidden;
+    font-family: "Poppins";
+    .container {
+        width: 100%;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 7px;
+    &-thumb {
+        background-color: var.$blue;
+    }
+}
+
+.header {
+    @include mix.flex(column, space-evenly, center);
+    height: 1071.41px;
+    &-top {
+        @include mix.flex();
+        margin-top: 2rem;
+        .logo {
+            width: 100px;
+            height: 50px;
+            background-size: cover;
+            background-image: url(../img/logo.png);
+        }
+        span {
+            display: block;
+            width: 180px;
+            font-size: 1em;
+            text-align: center;
+            color: var.$white;
+            transform: translateY(3rem) scale(0.9);
+            line-height: 2rem;
+        }
+    }
+
+    &-bot {
+        h1 {
+            @include mix.flex();
+            font-size: 15em;
+            color: var.$white;
+        }
+        .personal {
+            transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -100, 0, 0, 1);
+            transition: 0.5s;
+            line-height: 0.5;
+        }
+        .coaching {
+            transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 100, 0, 0, 1);
+            transition: 0.5s;
+        }
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        width: 400px;
+        height: 800px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-image: url(../img/sage-header.webp);
+        transform: translateY(200px);
+    }
+}
+
+section {
+    margin-top: 7rem;
+    @include mix.flex(row, space-evenly, center);
+    flex-wrap: wrap;
+
+    &.feedback, &.help {
+        .text {
+            order: 1;
+        }
+        .image {
+            order: 2;
+        }
+    }
+
+    &.explore {
+        .image {
+            width: 500px;
+        }
+    }
+
+    &.help {
+        margin-bottom: 100px;
+    }
+
+    .image {
+        width: 350px;
+        height: 700px;
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .text {
+        width: 250px;
+        line-height: 1;
+        h3 {
+            color: var.$blue !important;
+            font-size: 2em;
+        }
+
+        h2 {
+            font-size: 3em;
+            font-weight: bold;
+            margin-top: 0.2em !important;
+        }
+
+        p {
+            margin-top: 1.5em !important;
+            line-height: 1.5;
+        }
+
+        h3,
+        h2,
+        p {
+            color: var.$white;
+            margin: 0;
+        }
+    }
+}
+
+footer {
+    color: var.$white;
+    padding: 3em;
+    display: flex;
+    box-sizing: border-box;
+    span {
+        margin: auto;
+    }
+}
+
+.row {
+    height: 200px;
+    display: flex;
+    h4 {
+        margin: auto;
+        color: var.$blue;
+        transform: rotate(-90deg);
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+    }
+}
