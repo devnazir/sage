@@ -152,3 +152,25 @@ footer span {
 }
 
 /*# sourceMappingURL=main.css.map */
+
+/* Mobile Version */
+@media screen and (max-width: 600px){
+  header{
+    overflow: hidden;
+  }
+  section .image{
+    width: 250px;
+    height: 500px;
+    margin: 20px 0;
+  }
+  section .text h2 {
+    font-size: 2em;
+  }
+  .header-bot h1 {
+    font-size: 10em;
+  }
+  .header::after {
+    width: 300px;
+    height: 600px;
+  }
+}
